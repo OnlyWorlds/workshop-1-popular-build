@@ -1,0 +1,610 @@
+/**
+ * The Buried Giant — Theme Override
+ * Dark ages parchment aesthetic over OnlyWorlds base
+ */
+
+:root {
+  --bg-parchment: #f4e4bc;
+  --bg-parchment-dark: #d4c4a0;
+  --bg-parchment-deep: #c4b490;
+  --ink: #2c1810;
+  --ink-light: #5c4030;
+  --ink-faint: #8c7060;
+  --blood: #8b2500;
+  --gold: #c9a227;
+  --gold-dim: rgba(201, 162, 39, 0.3);
+  --mist: rgba(180, 190, 200, 0.4);
+  --mist-light: rgba(200, 210, 220, 0.15);
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Crimson Text', serif;
+}
+
+/* Override base dark theme for this tool */
+body {
+  background: var(--bg-parchment) !important;
+  color: var(--ink) !important;
+  font-family: var(--font-body) !important;
+}
+
+/* ===== LAYOUT ===== */
+
+.bg-app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+.bg-header {
+  background: var(--ink);
+  padding: 20px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid var(--gold);
+  position: relative;
+  z-index: 10;
+}
+
+.bg-header h1 {
+  font-family: var(--font-heading) !important;
+  color: var(--bg-parchment) !important;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.bg-header-sub {
+  font-family: var(--font-body);
+  color: var(--ink-faint);
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+.bg-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.bg-header .bg-logout {
+  background: transparent;
+  color: var(--bg-parchment-dark);
+  border: 1px solid var(--ink-faint);
+  padding: 6px 14px;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 200ms;
+}
+
+.bg-header .bg-logout:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.bg-body {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+
+/* ===== SIDEBAR ===== */
+
+.bg-sidebar {
+  width: 260px;
+  min-width: 260px;
+  background: var(--bg-parchment-dark);
+  border-right: 2px solid var(--ink-faint);
+  padding: 24px 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.bg-sidebar-title {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  padding: 0 20px;
+  margin-bottom: 12px;
+}
+
+.bg-type-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 20px;
+  background: transparent;
+  border: none;
+  color: var(--ink) !important;
+  font-family: var(--font-body) !important;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 150ms;
+  text-transform: capitalize;
+  border-left: 3px solid transparent;
+}
+
+.bg-type-btn:hover {
+  background: rgba(44, 24, 16, 0.06);
+  border-left-color: var(--ink-faint);
+}
+
+.bg-type-btn.active {
+  background: rgba(44, 24, 16, 0.1);
+  border-left-color: var(--blood);
+  font-weight: 600;
+}
+
+.bg-type-count {
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+  font-style: italic;
+}
+
+/* ===== MAIN CONTENT ===== */
+
+.bg-main {
+  flex: 1;
+  padding: 32px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.bg-main-header {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--blood) !important;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--ink-faint);
+}
+
+.bg-element-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* ===== ELEMENT CARDS ===== */
+
+.bg-card {
+  background: var(--bg-parchment);
+  border: 1px solid var(--bg-parchment-deep);
+  border-radius: 2px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 200ms;
+  position: relative;
+  box-shadow: 1px 2px 4px rgba(44, 24, 16, 0.1);
+}
+
+.bg-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gold);
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.bg-card:hover {
+  border-color: var(--ink-faint);
+  box-shadow: 2px 4px 12px rgba(44, 24, 16, 0.15);
+  transform: translateY(-2px);
+}
+
+.bg-card:hover::before {
+  opacity: 1;
+}
+
+.bg-card-name {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--ink) !important;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.bg-card-type {
+  font-size: 0.75rem;
+  color: var(--blood);
+  font-style: italic;
+  text-transform: capitalize;
+  margin-bottom: 8px;
+}
+
+.bg-card-desc {
+  font-size: 0.9rem;
+  color: var(--ink-light);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===== DETAIL PANEL ===== */
+
+.bg-detail-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(44, 24, 16, 0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(2px);
+}
+
+.bg-detail {
+  background: var(--bg-parchment);
+  border: 2px solid var(--ink-faint);
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 32px;
+  position: relative;
+  box-shadow: 4px 8px 24px rgba(44, 24, 16, 0.3);
+}
+
+.bg-detail-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  color: var(--ink-faint) !important;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-family: var(--font-heading);
+  transition: color 150ms;
+}
+
+.bg-detail-close:hover {
+  color: var(--blood) !important;
+}
+
+.bg-detail-type {
+  font-size: 0.75rem;
+  color: var(--blood);
+  font-style: italic;
+  text-transform: capitalize;
+  margin-bottom: 4px;
+}
+
+.bg-detail h2 {
+  font-family: var(--font-heading) !important;
+  color: var(--ink) !important;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--gold-dim);
+}
+
+.bg-detail-body {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink-light);
+}
+
+.bg-detail-field {
+  margin-bottom: 12px;
+}
+
+.bg-detail-label {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 2px;
+}
+
+.bg-detail-value {
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+/* ===== MIST OVERLAY ===== */
+
+.bg-mist {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(200, 210, 220, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(180, 190, 200, 0.08) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 50%, rgba(190, 200, 210, 0.06) 0%, transparent 60%);
+  animation: mistDrift 25s ease-in-out infinite alternate;
+}
+
+@keyframes mistDrift {
+  0% {
+    opacity: 0.6;
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-20px) scale(1.02);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translateX(10px) scale(1);
+  }
+}
+
+/* ===== LOADING ===== */
+
+.bg-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  color: var(--ink-light);
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.bg-loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--bg-parchment-deep);
+  border-top-color: var(--blood);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== EMPTY STATE ===== */
+
+.bg-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--ink-faint);
+  font-style: italic;
+}
+
+/* ===== VIEW TOGGLE ===== */
+
+.bg-view-toggle {
+  background: transparent;
+  color: var(--bg-parchment-dark) !important;
+  border: 1px solid var(--ink-faint);
+  padding: 6px 14px;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 200ms;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bg-view-toggle:hover {
+  border-color: var(--gold);
+  color: var(--gold) !important;
+}
+
+/* ===== MAP VIEW ===== */
+
+.bg-map-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  cursor: grab;
+  background:
+    radial-gradient(ellipse at center, var(--bg-parchment) 0%, var(--bg-parchment-dark) 100%);
+}
+
+.bg-map-surface {
+  position: absolute;
+  transform-origin: 0 0;
+  background:
+    /* Subtle parchment texture via gradients */
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 40px,
+      rgba(44, 24, 16, 0.015) 40px,
+      rgba(44, 24, 16, 0.015) 41px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 40px,
+      rgba(44, 24, 16, 0.015) 40px,
+      rgba(44, 24, 16, 0.015) 41px
+    ),
+    /* Aged parchment variation */
+    radial-gradient(ellipse at 30% 20%, rgba(212, 196, 160, 0.4) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(196, 180, 144, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, var(--bg-parchment) 0%, var(--bg-parchment-dark) 100%);
+  border: 2px solid var(--ink-faint);
+  box-shadow: inset 0 0 80px rgba(44, 24, 16, 0.08);
+}
+
+/* Map decoration — compass rose */
+.bg-map-decoration {
+  position: absolute;
+  bottom: 60px;
+  right: 60px;
+  pointer-events: none;
+}
+
+.bg-compass {
+  width: 80px;
+  height: 80px;
+  border: 2px solid var(--ink-faint);
+  border-radius: 50%;
+  position: relative;
+  opacity: 0.3;
+}
+
+.bg-compass::before {
+  content: 'N';
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.1em;
+}
+
+.bg-compass::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(var(--blood), var(--ink-faint));
+}
+
+/* ===== MAP MARKERS ===== */
+
+.bg-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 2;
+  text-align: center;
+  transition: transform 150ms, z-index 0ms;
+}
+
+.bg-marker:hover {
+  z-index: 10;
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+.bg-marker-dot {
+  border-radius: 50%;
+  margin: 0 auto 4px;
+  transition: box-shadow 200ms;
+}
+
+.bg-marker-label {
+  font-family: var(--font-heading);
+  white-space: nowrap;
+  text-shadow: 1px 1px 2px var(--bg-parchment), -1px -1px 2px var(--bg-parchment);
+}
+
+/* Size variants */
+.bg-marker-lg .bg-marker-dot {
+  width: 14px;
+  height: 14px;
+  background: var(--blood);
+  box-shadow: 0 0 8px rgba(139, 37, 0, 0.3);
+}
+
+.bg-marker-lg .bg-marker-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.08em;
+}
+
+.bg-marker-lg:hover .bg-marker-dot {
+  box-shadow: 0 0 16px rgba(139, 37, 0, 0.5);
+}
+
+.bg-marker-md .bg-marker-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--gold);
+  box-shadow: 0 0 6px rgba(201, 162, 39, 0.3);
+}
+
+.bg-marker-md .bg-marker-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ink-light);
+}
+
+.bg-marker-md:hover .bg-marker-dot {
+  box-shadow: 0 0 12px rgba(201, 162, 39, 0.5);
+}
+
+.bg-marker-sm .bg-marker-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--ink-faint);
+}
+
+.bg-marker-sm .bg-marker-label {
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: var(--ink-faint);
+  font-style: italic;
+}
+
+.bg-marker-sm:hover .bg-marker-label {
+  color: var(--ink);
+}
+
+/* Type-specific marker colors */
+.bg-marker-location .bg-marker-dot { background: var(--blood); }
+.bg-marker-character .bg-marker-dot { background: var(--gold); }
+.bg-marker-creature .bg-marker-dot { background: #6b4423; }
+.bg-marker-institution .bg-marker-dot { background: #8b6914; }
+.bg-marker-event .bg-marker-dot { background: #5c6b3c; }
+.bg-marker-phenomenon .bg-marker-dot { background: #6b7b8b; }
+.bg-marker-species .bg-marker-dot { background: #7b5b3b; }
+
+/* Map needs no padding when showing */
+.bg-main:has(.bg-map-container) {
+  padding: 0;
+  overflow: hidden;
+}
+
+/* ===== LOGIN OVERRIDE ===== */
+
+#app input {
+  font-family: var(--font-body) !important;
+}
+
+/* Scrollbar styling */
+.bg-sidebar::-webkit-scrollbar,
+.bg-main::-webkit-scrollbar {
+  width: 6px;
+}
+
+.bg-sidebar::-webkit-scrollbar-track,
+.bg-main::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.bg-sidebar::-webkit-scrollbar-thumb,
+.bg-main::-webkit-scrollbar-thumb {
+  background: var(--bg-parchment-deep);
+  border-radius: 3px;
+}
