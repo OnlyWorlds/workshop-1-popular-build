@@ -1,0 +1,15 @@
+{
+  "template": "WORKSHOP",
+  "assembled": "2026-02-12",
+  "assembler": "Kael (Assembly)",
+  "blocks": [
+    { "id": "onlyworlds-auth-basic", "version": "1.1.1", "category": "auth" },
+    { "id": "onlyworlds-sdk-full", "version": "1.0.2", "category": "integration" },
+    { "id": "onlyworlds-visual-identity", "version": "1.0.1", "category": "style" },
+    { "id": "toast-notifications", "version": "1.0.0", "category": "ui" },
+    { "id": "ui-modal-base", "version": "1.0.0", "category": "ui" },
+    { "id": "local-storage-utils", "version": "1.0.0", "category": "utility" }
+  ],
+  "purpose": "Universal workshop foundation — base for any OnlyWorlds tool build",
+  "notes": "Framework-agnostic (vanilla TS + Vite). Add React/Tailwind/etc as needed. See FORGE_SPEC.md for available add-on blocks."
+}
