@@ -1,6 +1,7 @@
 {
   "name": "workshop-base",
   "version": "1.0.0",
+  "license": "MIT",
   "description": "Universal OnlyWorlds tool foundation — workshop-ready base for any build",
   "type": "module",
   "scripts": {
