@@ -76,7 +76,7 @@ npx tailwindcss init -p
 
 ## Available Add-On Blocks
 
-See **FORGE_SPEC.md** for a complete reference of Assembly blocks not included in this foundation — visualization, AI, maps, and more. All available at `C:\Users\Titus\Carrier\Assembly\blocks\`.
+See **FORGE_SPEC.md** for the add-on blocks this foundation leaves out: visualization, AI, maps, and more. They are not in this repository.
 
 ## Deployment
 
@@ -90,6 +90,6 @@ Pre-approved CORS: `*.pages.dev`, `*.vercel.app`, `*.netlify.app`, `localhost:*`
 
 ---
 
-**Assembled by**: Kael (Assembly)
+**Assembled by**: Kael
 **Date**: 2026-02-12
 **Template**: WORKSHOP (6 blocks)

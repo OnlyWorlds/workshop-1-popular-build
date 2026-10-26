@@ -1,7 +1,7 @@
 {
   "template": "WORKSHOP",
   "assembled": "2026-02-12",
-  "assembler": "Kael (Assembly)",
+  "assembler": "Kael",
   "blocks": [
     { "id": "onlyworlds-auth-basic", "version": "1.1.1", "category": "auth" },
     { "id": "onlyworlds-sdk-full", "version": "1.0.2", "category": "integration" },

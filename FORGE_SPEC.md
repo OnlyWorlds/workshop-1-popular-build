@@ -1,4 +1,4 @@
-# Workshop Base — Forge Specification
+# Workshop Base — Specification
 
 **Foundation**: WORKSHOP template (6 blocks)
 **Assembled**: 2026-02-12
@@ -23,9 +23,7 @@ A clean, building, framework-agnostic foundation with:
 
 ## Available Add-On Blocks (Not Included)
 
-These blocks are in Assembly's library. If your build needs any of them, copy the source files from Assembly and add the npm dependencies.
-
-**Assembly location**: `C:\Users\Titus\Carrier\Assembly\blocks\`
+These blocks are kept in a separate block library, not in this repository. A build that needs one copies its source files and adds the npm dependencies.
 
 ---
 
@@ -156,5 +154,5 @@ sdk.markers       sdk.zones         sdk.worlds
 
 ---
 
-**Assembled by**: Kael (Assembly)
-**For**: Temper (Forge) — workshop builds, Element Viewer trial, any OnlyWorlds tool
+**Assembled by**: Kael
+**For**: workshop builds, Element Viewer trial, any OnlyWorlds tool
